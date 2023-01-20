@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Principal: <input type="text" id="principal" oninput="calculate()"><br>
+        <!-- Interest Rate: <input type="text" id="rate" oninput="calculate()"><br> -->
+        <select class="form-select w-100 p-1" id="rate" oninput="calculate()" aria-label="Default select example">
+            <option >Select Interest Rate</option>
+            <option selected value="1">1 %</option>
+            <option value="2">2 %</option>
+            <option value="3">3 %</option>
+            <option value="3">4 %</option>
+            <option value="3">5 %</option>
+            <option value="3">6 %</option>
+        </select>
+        <br>
+        Time (in years): <input type="text" id="time" oninput="calculate()"><br>
+      </form>
+      <br>
+      <p>Simple Interest: <span id="interest"></span></p>
+    
+
+</body>
+
+<script>
+    function calculate() {
+        var principal = document.getElementById("principal").value;
+        var rate = document.getElementById("rate").value;
+        var time = document.getElementById("time").value;
+        var interest = (principal * rate * time) / 100;
+        document.getElementById("interest").innerHTML = interest;
+      }
+      
+</script>
+
+</html>
